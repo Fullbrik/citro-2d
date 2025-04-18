@@ -1,0 +1,22 @@
+cargo-features = ["per-package-target"]
+
+[workspace]
+members = ["citro-2d-sys"]
+
+[package]
+name = "citro-2d"
+version = "0.1.0"
+edition = "2024"
+# Necesary for RustRover to work
+default-target = "armv6k-nintendo-3ds"
+forced-target = "armv6k-nintendo-3ds"
+
+[dependencies]
+citro-2d-sys = { path = "citro-2d-sys" }
+thiserror = "2.0"
+
+[dev-dependencies]
+ctru-rs = { git = "https://github.com/rust3ds/ctru-rs.git" }
+
+[package.metadata.cargo-3ds]
+romfs_dir = "examples/romfs"

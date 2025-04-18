@@ -1,0 +1,19 @@
+cargo-features = ["per-package-target"]
+
+[package]
+name = "citro-2d-sys"
+version = "0.1.0"
+edition = "2024"
+
+default-target = "armv6k-nintendo-3ds"
+forced-target = "armv6k-nintendo-3ds"
+
+[dependencies]
+libc = "0.2.116"
+ctru-sys = { git = "https://github.com/rust3ds/ctru-rs.git" }
+
+[build-dependencies]
+bindgen = { version = "0.71.1", features = ["experimental"] }
+cc = "1.0.83"
+doxygen-rs = "0.4.2"
+

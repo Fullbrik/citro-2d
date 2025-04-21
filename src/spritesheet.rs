@@ -46,6 +46,10 @@ impl Spritesheet {
         unsafe { citro_2d_sys::C2D_SpriteSetPos(&mut self.current_sprite as *mut citro_2d_sys::C2D_Sprite, x, y); }
     }
 
+    pub fn set_rotation(&mut self, radians: f32) {
+        unsafe { citro_2d_sys::C2D_SpriteSetRotation(&mut self.current_sprite as *mut citro_2d_sys::C2D_Sprite, radians); }
+    }
+
     pub fn set_center(&mut self, x: f32, y: f32) {
         unsafe { citro_2d_sys::C2D_SpriteSetCenter(&mut self.current_sprite as *mut citro_2d_sys::C2D_Sprite, x, y); }
     }
